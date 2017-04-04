@@ -1,0 +1,28 @@
+
+<div class="my-form">
+<ul>
+<li *ngFor="let user of users">{{user.name }}</li>
+
+
+</ul>
+
+
+<div class="col-lg-12">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for..." required [(ngModel)]="addMsg">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button" (click)="add()">Add New</button>
+      </span>
+    </div>
+
+   <p> </p>
+    
+<!--<h3>{{addMsg}}</h3>-->
+
+ <ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null">{{ successMessage }}</ngb-alert>
+ <ngb-alert *ngIf="alertMessage"  (close)="alertMessage = null">{{ alertMessage }}</ngb-alert>
+ 
+</div>
+
+
+</div>
