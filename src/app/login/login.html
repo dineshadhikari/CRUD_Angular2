@@ -2,21 +2,18 @@
 <h1> Login page </h1>
 
 <div class="login_box" >
-<form name="form" class="col-12 my_form"  >
   <div class="form-group" >
-    <label>Email address</label>
-    <input type="email" class="form-control" name="username" required placeholder="Password">
-    <small class="denger">Username is: </small>
+    <label>Enter Username</label>
+    <input type="email" class="form-control" value="adhikari"  [ngClass]="email_validation ? 'error' : '' "  [(ngModel)]="email"  placeholder="Username">
+    <small class="denger">Username is: adhikari <!--<i class="float-right">Email Not found</i>--></small>
   </div>
   <div class="form-group" >
     <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" placeholder="Password"  required>
-     <small class="denger">Password is: </small>
+    <input type="password" class="form-control" placeholder="Password" [ngClass]="pass_validation ? 'error' : '' " [(ngModel)]="pass"  required>
+     <small class="denger">Password is: :welcome@123 </small>
   </div>
      
-  <button type="button"  class="btn btn-primary" routerLink='/dashboard'>Submit</button>
+  <button type="button"  class="btn btn-primary" (click)="submit()">Submit</button>
   <!--<a href="" routerLink="/dashboard" class="btn">click</a>-->
-</form>
-
 
 </div>

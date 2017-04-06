@@ -3,3 +3,16 @@
 body{
     padding: 20px;
 }
+
+
+
+.my_list .close{
+    display: none;
+}
+
+.my_list li:hover{
+    background: #f5f2f9;
+}
+
+.my_list li:hover  .close{display: block;     right: 10px;
+    position: absolute; top: 10px;}

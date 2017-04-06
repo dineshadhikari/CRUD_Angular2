@@ -1,11 +1,12 @@
-import {Component,OnInit,} from '@angular/core';
+import {Component,OnInit, ViewChild} from '@angular/core';
 import {Http} from '@angular/http'
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {Subject} from 'rxjs/Subject';
 // import {json} from './json/user.json'
 @Component({
   selector: 'dashboard',
-  templateUrl:"./dashboard.html"
+  templateUrl:"./dashboard.html",
+  styleUrls: ['./app.component.css']
 })
 export class dashboardComponent { 
   private _success = new Subject<string>();
@@ -26,12 +27,19 @@ export class dashboardComponent {
 //   console.log("data",JSON.stringify(response));
 // })
 // }
+@ViewChild('passcode1') pass1;
+@ViewChild('passcode2') pass2;
+@ViewChild('passcode3') pass3;
+@ViewChild('passcode4') pass4;
 
 constructor(private http:Http) 
+
+
+
         {
             //console.log(">>friend.service.ts:constructor--")
-            http.request('./app/json/user.json')
-                    .subscribe(response => this.http = response.json());
+            // http.request('./app/json/user.json')
+            //         .subscribe(response => this.http = response.json());
     }
 
 
@@ -39,7 +47,7 @@ constructor(private http:Http)
   users = [
       {name:'Amsterdam' ,last:'dinesh'},
       {name:'Albania', last:'8jjjj'},
-      
+      {name:'Pak'},
   ];
         
 addMsg:string;
@@ -55,6 +63,55 @@ else{
   setTimeout(() => this.alertMessage = null, 2000);
 this.alertMessage="plz enter ur name"
 }
+}
+
+close(ID){
+  console.log("helloo" + ID);
+  this.users.splice(ID,1);
+}
+
+
+
+boys = [
+    {
+      "id": 0,
+      "name": "Adam Carter",
+      "work": "Unilogic",
+      "email": "adam.carter@unilogic.com",
+      "dob": "1978",
+      "address": "83 Warner Street",
+      "city": "Boston",
+      "optedin": true
+    },
+    {
+      "id": 1,
+      "name": "Leanne Brier",
+      "work": "Connic",
+      "email": "leanne.brier@connic.org",
+      "dob": "13/05/1987",
+      "address": "9 Coleman Avenue",
+      "city": "Toronto",
+      "optedin": false
+    }
+  ]
+  images = [
+    "img0.png",
+    "img1.png",
+    "img2.png"
+  ]
+  coordinates: {
+  	"x": 35.12,
+  	"y": -21.49
+  }
+  price = "$59,395"
+
+
+
+
+
+passcode1(){
+  // alert("hiii");
+this.pass2.focus()
 }
 
 

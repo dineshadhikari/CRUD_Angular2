@@ -1,20 +1,24 @@
 
 <div class="my-form">
-<ul>
-<li *ngFor="let user of users">{{user.name }}</li>
-
-
+<ul class="list-group my_list">
+<li class="list-group-item" *ngFor="let user of users; let i = index">{{user.name }}
+  <div class="float-right" >j
+    <span class="glyphicon glyphicon-trash " (click)="close(i)" aria-hidden="true">&times;</span>
+    
+    </div>
+  </li>
 </ul>
 
-
+   <p> </p>
 <div class="col-lg-12">
+ 
     <div class="input-group">
       <input type="text" class="form-control" placeholder="Search for..." required [(ngModel)]="addMsg">
       <span class="input-group-btn">
         <button class="btn btn-primary" type="button" (click)="add()">Add New</button>
       </span>
     </div>
-
+ 
    <p> </p>
     
 <!--<h3>{{addMsg}}</h3>-->
@@ -22,6 +26,41 @@
  <ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null">{{ successMessage }}</ngb-alert>
  <ngb-alert *ngIf="alertMessage"  (close)="alertMessage = null">{{ alertMessage }}</ngb-alert>
  
+</div>
+
+</div>
+
+<hr>
+
+<div class="my-form" [hidden]="true">
+
+<ul class="list-group my_list">
+<li class="list-group-item" *ngFor="let boy of boys">Boy name is: {{boy.name}}, Work is {{boy.work}}</li>
+<li class="list-group-item" *ngFor="let zz of images">Image path is: {{zz}} <br></li>
+<li class="list-group-item">Price  is: $ {{price }}</li>
+</ul>
+
+</div>
+
+
+<div class="my-form">
+
+<div class="row">
+  <div class="col-3">
+    <input type="text" class="form-control" (click)="passcode1()">
+  </div>
+  <div class="col-3">
+    <input type="text" class="form-control" (click)="passcode2()" id="passcode2">
+  </div>
+
+  <div class="col-3">
+    <input type="text" class="form-control" (click)="passcode()" id="passcode3">
+  </div>
+
+<div class="col-3">
+    <input type="text" class="form-control" (click)="passcode()" id="passcode4">
+  </div>
+
 </div>
 
 
