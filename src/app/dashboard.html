@@ -47,10 +47,10 @@
 
 <div class="row">
   <div class="col-3">
-    <input type="text" class="form-control" (click)="passcode1()">
+    <input type="text" class="form-control" (click)="passcode1()" id="pass1">
   </div>
   <div class="col-3">
-    <input type="text" class="form-control" (click)="passcode2()" id="passcode2">
+    <input type="text" class="form-control" (click)="passcode2()" id="pass2">
   </div>
 
   <div class="col-3">
@@ -58,9 +58,10 @@
   </div>
 
 <div class="col-3">
-    <input type="text" class="form-control" (click)="passcode()" id="passcode4">
+    <input type="text" class="form-control" [class.active]="modalOpen" #pass4>
+    
   </div>
-
+<!--/{{myFocusVar}}-->
 </div>
 
 

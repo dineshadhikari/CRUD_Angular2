@@ -1,0 +1,123 @@
+ <h3>This Joatmon Tutorial </h3>
+
+
+<hr>
+<P>Event Binding and References</P>
+
+<div class="input-group col-lg-6">
+<input type="text" class="form-control" #demoinput placeholder="type then click 👉">
+ <span class="input-group-btn">
+<button class="btn btn-primary" (click)="onClick(demoinput.value)">Click Me</button>
+ </span>
+<i style="font-size: 13px;">See in console</i>
+</div>
+
+
+
+<hr>
+<P>Two way data binding </P>
+<input type="text" [(ngModel)]="f_Name">
+<input type="text" [(ngModel)]="l_Name"><br>
+First name:{{f_Name}}, Last name:{{l_Name}}
+
+
+<hr>
+<P>Structural Directives  (*ngiF, ngSwitch, ngSwitchCase)</P>
+
+<ul>
+<li *ngIf="showElement">*ng-if Show Element</li>
+</ul>
+<div [ngSwitch]="color">
+<h5 *ngSwitchCase="'red'">Red color is Shown</h5>    
+<h5 *ngSwitchCase="'blue'">Blue color is Shown</h5>    
+<h5 *ngSwitchDefault>Invalid color is Shown</h5>    
+
+
+<ul>
+<li *ngFor="let dd of colors">{{dd}}</li>
+</ul>
+
+</div>
+
+
+<hr>
+<P> Attribute Directives</P>
+<h5 [ngClass]="{c1:ss}">Ng Class Paragraph</h5>
+<button class="btn btn-secondary" (click)="clickme()">Click to Toggle</button>
+
+
+
+
+<hr>
+<P>Inputs and Outputs</P>
+<h4>Parent AppComponent</h4>
+Enter parent AppComponent Value <input type="password" [(ngModel)]="parent"><br>
+<label> of ChildComponent:{{child}}</label>
+
+
+<h4>Child AppComponent</h4>
+Enter Child AppComponent Value <input type="text" [(ngModel)]="child"><br>
+Value of AppComponent:{{parent}}
+
+
+<hr>
+<P>Pipes</P>
+<h3>{{name}}</h3>
+
+<h3>{{name | uppercase}}</h3>
+<h3>{{name | lowercase}}</h3>
+<h3>{{name | slice:'0':'3'}}</h3>
+-------------------------------------
+<h3>{{9.876}}</h3>
+<h3>{{9.876 | number:'1.2-3'}}</h3>
+<h3>{{9.876 | number:'2.2-4'}}</h3>
+
+
+
+
+<hr>
+<P>Template Driven Forms</P>
+
+<div class="container">
+<h4>User Data</h4>
+
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+
+<div class="form-group">
+<label>Name</label>
+<input type="text" class="form-control" name="name" [(ngModel)]="nn" required >
+
+{{nn}}
+</div>
+
+<div class="form-group">
+<label>email </label>
+<input type="text" class="form-control" name="email" ngModel required #nameRef>
+{{nameRef.className}}
+</div>
+<div ngModelGroup="Address">
+<div class="form-group">
+<label>Street</label>
+<input type="text" class="form-control" name="street" ngModel>
+</div>
+
+<div class="form-group">
+<label>City</label>
+<input type="text" class="form-control" name="city" ngModel>
+</div>
+
+<div class="form-group">
+<label>PostalCode</label>
+<input type="text" class="form-control" name="postalcode" ngModel>
+</div>
+
+</div>
+
+<button type="submit"  class="btn btn-primary">Submit</button>
+
+</form>
+
+</div><!--/container-->
+
+
+

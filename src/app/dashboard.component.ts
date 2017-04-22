@@ -1,4 +1,5 @@
-import {Component,OnInit, ViewChild} from '@angular/core';
+import {Component,OnInit, ViewChildren, ViewChild, HostListener, Input, Directive, ElementRef} from '@angular/core';
+import{Renderer} from '@angular/core'
 import {Http} from '@angular/http'
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {Subject} from 'rxjs/Subject';
@@ -27,10 +28,9 @@ export class dashboardComponent {
 //   console.log("data",JSON.stringify(response));
 // })
 // }
-@ViewChild('passcode1') pass1;
-@ViewChild('passcode2') pass2;
-@ViewChild('passcode3') pass3;
-@ViewChild('passcode4') pass4;
+@ViewChildren('passcode1') pass1;
+@ViewChildren('passcode2') pass2;
+@ViewChildren('passcode3') pass3;
 
 constructor(private http:Http) 
 
@@ -109,12 +109,36 @@ boys = [
 
 
 
-passcode1(){
-  // alert("hiii");
-this.pass2.focus()
-}
 
 
+// passcode1(){
+//   // alert("hiii");
+// this.pass1.pass2.setFocus();
+// }
+
+
+// myFocusVar: boolean = false
+
+
+    // @HostListener('focus', ['$event.target'])
+    //   onFocus(target) {
+    //     console.log("Focus called");
+    //     target.type = 'date';
+    //   }
+    // @HostListener('focusout', ['$event.target'])
+    // onFocusout(target) {
+    //   console.log("Focus out called");
+    //   target.type = 'text';
+    // }
+
+
+
+// focusOutFunction(){
+//    console.log("Focus out called");
+//  }
+//  focusFunction(){
+//    console.log("Focus called");
+//  }
 
 
 

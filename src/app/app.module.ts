@@ -7,13 +7,15 @@ import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { dashboardComponent } from './dashboard.component';
+import {TutorialComponent} from './tutorial/tutorial.component';
+import { HeaderComponent } from './headers/header.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
   declarations: [
-    AppComponent,LoginComponent,dashboardComponent
+    AppComponent,LoginComponent,dashboardComponent, TutorialComponent, HeaderComponent
   ],
   imports: [
     BrowserModule,
